@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aspire Card Management App
+
+A responsive web application for managing debit cards inspired by the Aspire application. This project was built as part of the Aspire FE Code Challenge.
+
+## Features
+
+- View account balance and existing cards
+- Add new debit cards with random card numbers and expiration dates
+- Freeze/unfreeze cards
+- View transaction history
+- Responsive design for desktop and mobile
+
+## Technologies Used
+
+- Next.js 15 (React 19)
+- TypeScript
+- Tailwind CSS v4
+- LocalStorage for data persistence
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18 or higher
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### View Cards
 
-## Learn More
+- On startup, you'll see a default card already loaded
+- Navigate through multiple cards using the dot navigation below the card
 
-To learn more about Next.js, take a look at the following resources:
+### Add New Card
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Click the "New card" button at the top right
+2. Enter a name for the card in the modal
+3. Submit the form
+4. The card will be added to your collection with a randomly generated card number and expiration date
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Freeze/Unfreeze Card
 
-## Deploy on Vercel
+- Click the "Freeze card" button below the card to freeze it
+- When a card is frozen, it will appear slightly transparent
+- The button will toggle to "Unfreeze card" when the card is frozen
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### View Card Details
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Click on the "Card details" section to view more details about the card
+
+### View Transactions
+
+- Scroll down to see the recent transactions for the currently selected card
+
+## Project Structure
+
+```
+app/
+├── components/        # React components
+│   ├── AddCardModal.tsx
+│   ├── CardActions.tsx
+│   ├── CardCarousel.tsx
+│   ├── CardDetails.tsx
+│   ├── DebitCard.tsx
+│   ├── MobileNavigation.tsx
+│   ├── Sidebar.tsx
+│   └── TransactionList.tsx
+├── services/          # Service functions
+│   └── cardService.ts
+├── types.ts           # TypeScript interfaces
+├── globals.css        # Global styles
+├── layout.tsx         # Root layout component
+└── page.tsx           # Main page component
+```
+
+## Improvements and Future Work
+
+- Add unit and integration tests
+- Implement proper state management with Redux or Context API
+- Add form validation for the add card modal
+- Implement more card actions (e.g., set spend limit, cancel card)
+- Add animations for better UX
+- Add more responsive features for mobile view
+# Aspire-fe-challenge
