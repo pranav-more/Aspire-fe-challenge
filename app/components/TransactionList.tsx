@@ -109,7 +109,7 @@ export default function TransactionList({
       {isOpen && (
         <div id="transactions-panel" className="px-6">
           <div className="divide-y divide-gray-100">
-            {mockTransactions.map((transaction, index) => {
+            {mockTransactions.map((transaction) => {
               // Determine the icon based on the type or icon property
               let icon;
               let bgColor;
@@ -199,7 +199,7 @@ export default function TransactionList({
               return (
                 <div key={transaction.id} className="py-4 flex items-center">
                   <div
-                    className={`w-16 h-16 rounded-full flex items-center justify-center mr-4`}
+                    className={`w-16 h-16 rounded-full flex items-center justify-center mr-4 ${bgColor}`}
                   >
                     {icon}
                   </div>
